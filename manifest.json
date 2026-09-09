@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Website Blocker",
+  "version": "1.1",
+  "description": "Block websites and set daily time limits.",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "tabs",
+    "alarms",
+    "idle"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Website Blocker",
+    "default_popup": "popup.html"
+  }
+}

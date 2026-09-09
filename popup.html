@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Website Blocker</title>
+
+  <style>
+    body {
+      width: 320px;
+      margin: 0;
+      padding: 16px;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 18px;
+      margin: 0 0 12px;
+    }
+
+    .row {
+      display: flex;
+      gap: 8px;
+    }
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background: #1b1b1b;
+      color: #fff;
+      outline: none;
+    }
+
+    button {
+      padding: 10px 12px;
+      border: 0;
+      border-radius: 8px;
+      background: #fff;
+      color: #111;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .site {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 8px;
+      background: #1b1b1b;
+    }
+
+    .remove {
+      background: #333;
+      color: #fff;
+      padding: 6px 8px;
+      font-size: 12px;
+    }
+
+    .empty {
+      color: #aaa;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    .error {
+      color: #ff6b6b;
+      margin-top: 10px;
+      font-size: 13px;
+      min-height: 16px;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #333;
+      margin: 20px 0 16px;
+    }
+
+    .minutes {
+      flex: 0 0 70px;
+      text-align: center;
+    }
+
+    .time {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 2px;
+    }
+
+    .time.over {
+      color: #ff6b6b;
+      font-weight: 700;
+    }
+
+    .site .meta {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Blocked sites</h1>
+
+  <div class="row">
+    <input id="siteInput" placeholder="example.com" />
+    <button id="addButton">Add</button>
+  </div>
+
+  <div id="error" class="error"></div>
+  <div id="siteList"></div>
+  <div id="emptyState" class="empty">No sites blocked yet.</div>
+
+  <hr />
+
+  <h1>Time-limited sites</h1>
+
+  <div class="row">
+    <input id="trackInput" placeholder="example.com" />
+    <input id="trackMinutes" class="minutes" type="number" min="1" placeholder="min" />
+    <button id="trackAddButton">Add</button>
+  </div>
+
+  <div id="trackError" class="error"></div>
+  <div id="trackList"></div>
+  <div id="trackEmpty" class="empty">No time limits set yet.</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
